@@ -21,8 +21,8 @@ module.exports = (robot) ->
   #     res.reply "Opening #{doorType} doors"
   #
 
-robot.hear /free/i, (res) ->
-res.emote "I'm afraid I can't let you do that."
+  robot.hear /free/i, (res) ->
+    res.emote "I'm afraid I can't let you do that."
 
   #
   # lulz = ['lol', 'rofl', 'lmao']
