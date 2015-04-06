@@ -210,11 +210,11 @@ module.exports = (robot) ->
       reply = "#{user.name}"
       if user.email
         reply += " (who can be emailed at #{user.email}),"
-      reply += " is known as #{user.nickname}, and is in possession of #{user.karma} tuitions. Last I heard, #{user.name} felt #{user.feels}."
+      reply += " is known as #{user.nickname}, and is in possession of #{user.karma} tuition dollars. Last I heard, #{user.name} felt #{user.feels}."
       msg.reply reply
 
 
-  robot.hear /^(?:jambot |jambot, )?(?:karma|tuitions|bux)(?: for)? (.*)/i, (msg) ->
+  robot.hear /^(?:jambot |jambot, )?(?:karma|tuition dollars|bux)(?: for)? (.*)/i, (msg) ->
     users = robot.brain.usersForFuzzyName(msg.match[1])
     if users.length == 0
       for id, user of (robot.brain.data.users or { })
@@ -230,7 +230,7 @@ module.exports = (robot) ->
       else
         karma = 0
         karma_person.karma = 0
-      msg.reply "#{karma_person.name} has #{karma} tuitions."
+      msg.reply "#{karma_person.name} has #{karma} tuition dollars."
     else
       key = msg.match[1].toLowercase().replace /(\W+)/g, "_"
       thingy_data = robot.brain.get("karma_#{key}") or { }
@@ -240,4 +240,4 @@ module.exports = (robot) ->
         karma = 0
         thingy_data.karma = 0
         robot.brain.set("karma_#{key}", thingy_data)
-      msg.reply "#{msg.match[1]} has #{karma} tuitions."
+      msg.reply "#{msg.match[1]} has #{karma} tuition dollars."
