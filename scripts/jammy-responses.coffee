@@ -60,17 +60,16 @@ helpfuls = [
   ]
 
 praises = [
-    "Great job",
-    "Good job",
-    "Nice work",
-    "You're crushing it",
+    "Now that's what I call innovation",
+    "Truly global leadership",
+    "Next stop: Presidental Leadership Team",
     "Well done"
   ]
 
 scolds = [
-    "Boo on you",
-    "Poor form",
-    "Badly done",
+    "I'm sending you to academic standards",
+    "Where's your academic excellence",
+    "You've failed us all",
     "Tsk"
 ]
 
