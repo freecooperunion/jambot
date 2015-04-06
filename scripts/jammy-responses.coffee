@@ -214,7 +214,7 @@ module.exports = (robot) ->
       msg.reply reply
 
 
-  robot.hear /^(?:jambot |jambot, )?(?:karma|tuition dollars|bux)(?: for)? (.*)/i, (msg) ->
+  robot.hear /^(?:jambot |jambot, )?(?:karma|tuition|bux|points|score)(?: for)? (.*)/i, (msg) ->
     users = robot.brain.usersForFuzzyName(msg.match[1])
     if users.length == 0
       for id, user of (robot.brain.data.users or { })
@@ -230,7 +230,7 @@ module.exports = (robot) ->
       else
         karma = 0
         karma_person.karma = 0
-      msg.reply "#{karma_person.name} has #{karma} tuition dollars."
+      msg.reply "#{karma_person.name} has $#{karma} scholarship dollars."
     else
       key = msg.match[1].toLowerCase().replace /(\W+)/g, "_"
       thingy_data = robot.brain.get("karma_#{key}") or { }
