@@ -8,7 +8,6 @@
     "easy-table": "",
     "edit-google-spreadsheet": "",
     "hubot": "^2.12.0",
-    "hubot-darts": "^1.0.1",
     "hubot-diagnostics": "0.0.1",
     "hubot-fliptable": "^1.2.0",
     "hubot-google-images": "^0.1.4",
@@ -20,16 +19,13 @@
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.2",
     "hubot-rules": "^0.1.0",
-    "hubot-script-spreadsheet": "0.0.13",
     "hubot-scripts": "^2.5.16",
-    "hubot-seen": "^0.2.2",
     "hubot-sentimental": "^1.0.5",
     "hubot-shipit": "^0.1.2",
     "hubot-slack": "^3.3.0",
     "hubot-soon": "^1.0.0",
     "hubot-youtube": "^0.1.2",
     "underscore": "^1.8.3",
-    "url": ""
   },
   "engines": {
     "node": "0.10.x"
