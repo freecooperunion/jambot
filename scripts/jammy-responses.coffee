@@ -158,7 +158,7 @@ module.exports = (robot) ->
   robot.respond /'?sup/i, (msg) ->
     msg.send msg.random helpfuls
 
-  robot.respond /praise (.*)/i, (msg) ->
+  robot.respond /merit (.*)/i, (msg) ->
     praise msg, robot, praises, 1
 
   robot.hear /(.*)\+\+/i, (msg) ->
@@ -167,7 +167,7 @@ module.exports = (robot) ->
   robot.hear /(.*)\-\-/i, (msg) ->
     praise msg, robot, scolds, -1
 
-  robot.respond /scold (.*)/i, (msg) ->
+  robot.respond /demerit (.*)/i, (msg) ->
     praise msg, robot, scolds, -1
 
   robot.respond /white pages/i, (msg) ->
@@ -214,7 +214,7 @@ module.exports = (robot) ->
       msg.reply reply
 
 
-  robot.hear /^(?:jambot |jambot, )?(?:karma|tuition|bux|points|score)(?: for)? (.*)/i, (msg) ->
+  robot.hear /^(?:jambot |jambot, )?(?:karma|tuition|bux|points|score|merit)(?: for)? (.*)/i, (msg) ->
     users = robot.brain.usersForFuzzyName(msg.match[1])
     if users.length == 0
       for id, user of (robot.brain.data.users or { })
@@ -230,7 +230,7 @@ module.exports = (robot) ->
       else
         karma = 0
         karma_person.karma = 0
-      msg.reply "#{karma_person.name} has $#{karma} scholarship dollars."
+      msg.reply "As part of our new commitment to Financial Sustainability™ we are providing #{karma_person.name} with 50% of $#{karma} in merit-based scholarships."
     else
       key = msg.match[1].toLowerCase().replace /(\W+)/g, "_"
       thingy_data = robot.brain.get("karma_#{key}") or { }
