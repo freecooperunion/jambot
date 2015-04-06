@@ -10,8 +10,8 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-sentimental",
-  "hubot-plusplus",
   "hubot-fliptable",
   "hubot-soon",
+  "hubot-karma",
   "hubot-youtube"
 ]
